@@ -1,0 +1,8 @@
+app:
+  build: ./first
+  links:
+    - nginx
+nginx:
+  image: nginx
+  ports:
+    - "80:80"
