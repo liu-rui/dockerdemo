@@ -1,8 +1,8 @@
 #!/bin/bash
-NAME="liurui/label"
+NAME="liurui/java-hello"
 
 sudo docker rmi  -f $NAME
-sudo docker build -t $NAME .
+sudo docker build -t $NAME . 
 
 echo "\n--------------------"
 sudo docker run --rm -it $NAME

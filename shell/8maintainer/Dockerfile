@@ -1,7 +1,6 @@
 FROM nginx
 
-MAINTAINER liurui
-
-
+MAINTAINER test
+ 
 
 CMD [ "ls" ]
