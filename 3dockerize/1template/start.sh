@@ -1,3 +1,3 @@
 #!/bin/bash
 
-dockerize 1.tmpl:1.txt
+dockerize -template 1.tmpl:1.log
