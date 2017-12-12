@@ -1,14 +1,9 @@
-> 参考：https://v1-7.docs.kubernetes.io/docs/tasks/configure-pod-container/configmap/
+> 参考：https://v1-7.docs.kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/
 
-#### 配置式字典
+#### pod中env来源于配置式字典
 
-1. 查看所有的配置式字典
 
+1. 查看日志
 ```
-kubectl get cm
-```
-
-2. 查看名为file-configmap的明细
-```
-kubectl describe cm file-configmap
+kubectl logs configmap-pod
 ```

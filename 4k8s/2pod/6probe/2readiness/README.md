@@ -1,12 +1,12 @@
-1. 是否存活是通过定期判断/tmp/healthy是否存在，当死掉时，kubernetes会重启容器。
+1. 是否准备就绪是通过定期判断/tmp/healthy是否存在
 
-2. 查看日志
-
-```
-kubectl describe  pods  liveness-pod
-```
-3. 查看pod的重启次数
+2. 查看日志,有type为warning的记录
 
 ```
-kubectl  get pods liveness-pod
+kubectl describe  pods  readiness-pod
+```
+3. 查看pod的重启次数 
+
+```
+kubectl  get pods readiness-pod
 ```

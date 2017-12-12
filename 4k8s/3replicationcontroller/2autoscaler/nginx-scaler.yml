@@ -1,0 +1,11 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: nginx
+spec:
+  maxReplicas: 10
+  minReplicas: 1
+  targetCPUUtilizationPercentage: 50
+  scaleTargetRef:
+    name: nginx-controller
+    kind: ReplicationController

@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: volume-pod
+spec:
+  restartPolicy: Never
+  containers:
+    - name: write
+      image: ubuntu
+      command: ["bash","-c","echo \"hello world\" >> /data/hello"]
+      volumeMounts:
+        - name: data
+          mountPath: /data
+    - name: read
+      image: ubuntu
+      command: ["bash","-c","sleep 10; cat /data/hello"]
+      volumeMounts:
+        - name: data
+          mountPath: /data
+  volumes:
+    - name: data
+      hostPath:
+        path: /tmp

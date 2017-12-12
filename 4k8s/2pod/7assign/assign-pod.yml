@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: assign-pod
+spec:
+  containers:
+    - name: assign-pod
+      image: nginx
+  nodeSelector:
+    disktype: ssd

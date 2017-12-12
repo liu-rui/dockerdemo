@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-world
+spec:
+  restartPolicy: OnFailure
+  containers:
+    - name: hello
+      image: "ubuntu"
+      command: ["/bin/echo", "hello", "world!!!"]
+      imagePullPolicy: Always

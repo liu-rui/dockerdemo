@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: callback-pod
+spec:
+  containers:
+    - name: war
+      image: sample
+      lifecycle:
+        postStart:
+          exec:
+            command:
+              - "cp"
+              - "sample.war"
+              - "/app"
+        preStop:
+          httpGet:
+            host: monitor.com
+            port: 8080
+            scheme: HTTP

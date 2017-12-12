@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: env-configmap
+  name: file-configmap
 data:
-  A: aaa
-  B: bbb
+  p1: hello
+  p2: world
