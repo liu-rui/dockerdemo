@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-test
+spec:
+  containers:
+    - name: nginx
+      image: busybox
+      command:
+        - sleep
+        - "3600"

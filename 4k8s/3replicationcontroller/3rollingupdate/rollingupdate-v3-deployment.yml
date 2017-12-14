@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: rollingupdate-v-deployment
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: rollingupdate-deployment
+    spec:
+      containers:
+        - name: rollingupdatedemo
+          image: myregistry.com/rollingupdatedemo:3
+          ports:
+            - containerPort: 80

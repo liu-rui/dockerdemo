@@ -1,0 +1,1 @@
+NodePort方式会在每个node上开放端口，即使node没有pod副本

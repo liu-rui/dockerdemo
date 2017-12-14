@@ -1,0 +1,32 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: b-deploy
+  labels:
+    app: b
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: b
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: data
+              mountPath: /usr/share/nginx/html
+      initContainers:
+        - name: init
+          image: centos
+          command: ["/bin/bash", "-c"]
+          args: ["/bin/echo \"b server\" > /data/index.html"]
+          volumeMounts:
+            - name: data
+              mountPath: /data
+      volumes:
+        - name: data
+          emptyDir: {}
