@@ -18,4 +18,3 @@ spec:
       gitRepo:
         repository: https://github.com/liu-rui/Shell.git
         revision: master
-        directory: centos

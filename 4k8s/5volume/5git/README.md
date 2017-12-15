@@ -3,5 +3,5 @@
 1. 查看
 
 ```bash
- kubectl exec test -- cat /data
+ kubectl exec test -- ls /data
 ```
